@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+ <header class="topbar">
+    <div class="topbar__inner">
+      <!-- Brand -->
+      <a class="brand" href="#" aria-label="byte2bite home">
+        <span class="brand__name">byte<span class="brand__accent">2</span>bite</span>
+      </a>
+
+      <!-- Primary navigation -->
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="/">HOME</a>
+        <a class="nav__link nav__link--active" href="#">RESERVATION</a>
+        <a class="nav__link" href="#">MENU</a>
+        <a class="nav__link" href="#">CONTACT</a>
+        <a class="nav__link" href="#">ABOUT US</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn--ghost" type="button">Sign in</button>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+    <main class="page">
+    <h1 class="page__title">SELECT TABLE</h1>
+    <form action="input" class="reservation-form">
+        <div class="field">
+          <label for="full-name">Full Name</label>
+          <input type="text" name="full-name" id="full-name" placeholder="Enter Full Name">
+        </div>
+        <div class="field">
+          <label for="phonenumber">Phonenumber</label>
+          <input type="number" name="phonenumber" id="phonenumber" placeholder="+63xxxxxxxxxx">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" placeholder="example@gmail.com">
+        </div>
+        <div class="field">
+          <label for="date">Date &amp; Time</label>
+          <input type="datetime-local" name="date" id="reservation-date">
+        </div>
+        <div class="field">
+          <label for="guests">Guests</label>
+          <input type="number" name="guests" id="guests" max="10" min="1" value="1">
+        </div>
+        <div class="field field--full">
+          <label for="special-request">Special Requests</label>
+          <input type="text" name="special-request" id="special-request" placeholder="Allergies, seating, celebrations...">
+        </div>
+
+        <fieldset class="table-select field--full">
+          <legend>Select a Table</legend>
+          <div class="table-picker">
+            <div class="table-grid">
+              <label class="table-card">
+                <input type="radio" name="table" id="table-t1" value="T1" checked>
+                <span class="table-card__body">
+                  <span class="table-card__name">Table 1</span>
+                  <span class="table-card__meta">2 seats</span>
+                </span>
+              </label>
+              <label class="table-card">
+                <input type="radio" name="table" id="table-t2" value="T2">
+                <span class="table-card__body">
+                  <span class="table-card__name">Table 2</span>
+                  <span class="table-card__meta">4 seats</span>
+                </span>
+              </label>
+              <label class="table-card">
+                <input type="radio" name="table" id="table-t3" value="T3">
+                <span class="table-card__body">
+                  <span class="table-card__name">Table 3</span>
+                  <span class="table-card__meta">4 seats</span>
+                </span>
+              </label>
+              <label class="table-card">
+                <input type="radio" name="table" id="table-t4" value="T4">
+                <span class="table-card__body">
+                  <span class="table-card__name">Table 4</span>
+                  <span class="table-card__meta">6 seats</span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Preview: only the selected table's image is shown (via CSS :has) -->
+            <div class="table-preview">
+              <div class="table-preview__item" data-for="t1">
+                <img src="../assets/t1.jpg" alt="Layout of table T1">
+                <span class="table-preview__caption">T1 - 2 seats</span>
+              </div>
+              <div class="table-preview__item" data-for="t2">
+                <img src="../assets/t2.jpg" alt="Layout of table T2">
+                <span class="table-preview__caption">T2 - 4 seats</span>
+              </div>
+              <div class="table-preview__item" data-for="t3">
+                <img src="../assets/t3.jpg" alt="Layout of table T3">
+                <span class="table-preview__caption">T3 - 4 seats</span>
+              </div>
+              <div class="table-preview__item" data-for="t4">
+                <img src="../assets/t4.jpg" alt="Layout of table T4">
+                <span class="table-preview__caption">T4 - 6 seats</span>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <input type="submit" value="CONFIRM RESERVATION">
+    </form>
+  </main>
+  <script src="../main.js"></script>
+</body>
+</html>
