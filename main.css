@@ -5,8 +5,8 @@
   --border: #2a2f3a;
   --text: #eef1f6;
   --text-muted: #9aa4b2;
-  --accent: #ff6b35;
-  --accent-hover: #ff8555;
+  --accent: #ff0000;
+  --accent-hover: #441300;
   --radius: 10px;
   --topbar-h: 64px;
 }
@@ -76,17 +76,40 @@ body {
   color: var(--accent);
 }
 
-/* Nav */
+/* ---------------------------------------------------------------- Sidebar / Nav */
+
+.sidebar {
+  /* Mobile default: off-canvas dropdown under the topbar */
+  position: fixed;
+  top: var(--topbar-h);
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+  transform: translateY(-150%);
+  visibility: hidden;
+  transition: transform 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.sidebar.is-open {
+  transform: translateY(0);
+  visibility: visible;
+  transition: transform 0.25s ease, visibility 0s;
+}
+
 .nav {
   display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-right: auto;
+  flex-direction: column;
+  gap: 0;
+  padding: 12px 20px 16px;
 }
 
 .nav__link {
-  padding: 8px 14px;
-  border-radius: var(--radius);
+  display: block;
+  padding: 12px 14px;
+  border-radius: 0;
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.925rem;
@@ -100,8 +123,14 @@ body {
 }
 
 .nav__link--active {
-  color: var(--text);
-  background: var(--surface);
+  color: var(--accent);
+  background: var(--surface-2);
+  border-bottom-color: var(--accent);
+}
+
+/* Divider between each nav item */
+.nav__link:not(:last-child) {
+  border-bottom: 1px solid var(--border);
 }
 
 /* Actions */
@@ -109,6 +138,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: auto;
 }
 
 .btn {
@@ -183,20 +213,6 @@ body {
   margin: 0 auto;
   border-radius: 2px;
   background: var(--text);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-/* Icon morphs into an X when the menu is open */
-.menu-toggle.is-active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.menu-toggle.is-active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.is-active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ---------------------------------------------------------------- Page */
@@ -221,31 +237,7 @@ body {
 /* ---------------------------------------------------------------- Responsive */
 
 @media (max-width: 720px) {
-  .nav {
-    /* Collapsed by default; JS toggles .is-open to reveal it as a dropdown */
-    display: none;
-    position: absolute;
-    top: var(--topbar-h);
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 2px;
-    margin: 0;
-    padding: 12px 20px 16px;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
-  }
-
-  .nav.is-open {
-    display: flex;
-  }
-
-  .nav__link {
-    padding: 12px 14px;
-  }
-
+  /* Sidebar becomes an off-canvas dropdown (see .sidebar base rules) */
   .btn--ghost {
     display: none;
   }
@@ -253,8 +245,31 @@ body {
   .menu-toggle {
     display: flex;
   }
+}
 
-  .actions {
-    margin-left: auto;
+/* Desktop: the nav lives in a fixed right sidebar */
+@media (min-width: 721px) {
+  .sidebar {
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 220px;
+    transform: none;
+    visibility: visible;
+    overflow-y: auto;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: 1px solid var(--border);
+    box-shadow: none;
+  }
+
+  .nav {
+    padding: 20px 14px;
+    gap: 0;
+  }
+
+  /* Keep the page content clear of the fixed sidebar */
+  .page {
+    margin-right: 220px;
   }
 }

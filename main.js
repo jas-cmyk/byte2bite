@@ -1,19 +1,21 @@
-/* Mobile navigation toggle */
+/* Navigation toggle.
+   Desktop: the sidebar is always visible (CSS handles that).
+   Mobile: the hamburger opens the sidebar as an off-canvas dropdown. */
 (function () {
   var toggle = document.querySelector(".menu-toggle");
-  var nav = document.querySelector(".nav");
-  if (!toggle || !nav) return;
+  var sidebar = document.querySelector(".sidebar");
+  if (!toggle || !sidebar) return;
 
   var DESKTOP = 720;
 
   function setOpen(open) {
-    nav.classList.toggle("is-open", open);
+    sidebar.classList.toggle("is-open", open);
     toggle.classList.toggle("is-active", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
   }
 
   function isOpen() {
-    return nav.classList.contains("is-open");
+    return sidebar.classList.contains("is-open");
   }
 
   toggle.addEventListener("click", function (event) {
@@ -22,13 +24,13 @@
   });
 
   // Close after choosing a link
-  nav.addEventListener("click", function (event) {
+  sidebar.addEventListener("click", function (event) {
     if (event.target.closest(".nav__link")) setOpen(false);
   });
 
   // Close on outside click
   document.addEventListener("click", function (event) {
-    if (isOpen() && !nav.contains(event.target) && !toggle.contains(event.target)) {
+    if (isOpen() && !sidebar.contains(event.target) && !toggle.contains(event.target)) {
       setOpen(false);
     }
   });
