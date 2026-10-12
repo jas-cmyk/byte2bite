@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>byte2bite</title>
+  <title>Home - Byte2Bite</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
@@ -29,17 +29,42 @@
     <nav class="nav" aria-label="Primary">
       <a class="nav__link nav__link--active" href="#">HOME</a>
       <a class="nav__link" href="/reservation">RESERVATION</a>
-      <a class="nav__link" href="#">MENU</a>
-      <a class="nav__link" href="#">CONTACT</a>
+      <a class="nav__link" href="/offers">OFFERS</a>
+      <a class="nav__link" href="/contact">CONTACT</a>
       <a class="nav__link" href="#">ABOUT US</a>
     </nav>
+    <img src="assets/samgyuplogo.png" alt="byte2bite logo" width="148" height="148">
   </aside>
 
   <main class="page">
+    <!-- Hero carousel -->
+    <section class="hero" data-carousel aria-roledescription="carousel" aria-label="Featured dishes">
+      <div class="hero__viewport" aria-live="polite">
+        <!-- Slides are rendered from lib/seed.js by main.js -->
+        <ul class="hero__track"></ul>
+      </div>
+
+      <button class="hero__nav hero__nav--prev" type="button" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+      </button>
+      <button class="hero__nav hero__nav--next" type="button" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+      </button>
+
+      <div class="hero__dots" role="tablist" aria-label="Choose slide"></div>
+    </section>
+
     <h1 class="page__title">What are you craving?</h1>
     <p class="page__subtitle">Fresh food from local kitchens, delivered fast.</p>
+
+    <!-- Drinks: rendered from lib/seed.js by main.js -->
+    <section class="drinks" aria-labelledby="drinks-title">
+      <h2 class="section__title" id="drinks-title">Drinks</h2>
+      <div class="drinks__grid" data-drinks></div>
+    </section>
   </main>
 
+  <script src="lib/seed.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

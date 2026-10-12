@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Byte2Bite</title>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <!-- Brand -->
+      <a class="brand" href="/" aria-label="byte2bite home">
+        <span class="brand__name">BYTE<span class="brand__accent">2</span>BITE</span>
+      </a>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn--ghost" type="button">Sign in</button>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation: left sidebar on desktop, dropdown on mobile -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="/">HOME</a>
+      <a class="nav__link" href="/reservation">RESERVATION</a>
+      <a class="nav__link" href="/offers">OFFERS</a>
+      <a class="nav__link nav__link--active" href="#">CONTACT</a>
+      <a class="nav__link" href="#">ABOUT US</a>
+    </nav>
+    <img src="../assets/samgyuplogo.png" alt="byte2bite logo" width="148" height="148">
+  </aside>
+
+  <main class="page">
+    <h1 class="page__title">CONTACT US</h1>
+    <p class="page__subtitle">Questions, feedback or a table for a crowd, send us a message.</p>
+
+    <div class="contact-layout">
+      <!-- Contact details -->
+      <section class="contact-info" aria-labelledby="contact-info-title">
+        <h2 class="section__title" id="contact-info-title">Visit us</h2>
+        <ul class="contact-info__list">
+          <li>
+            <span class="contact-info__label">Address</span>
+            <span class="contact-info__value"><a href="https://www.bing.com/maps/default.aspx?v=2&pc=FACEBK&mid=8100&where1=14.79919%2C%20121.0399&FORM=FBKPL1&name=Governor%20F.%20Halili%20avenue%2C%20San%20Jose%20del%20Monte%2C%20Philippines&mkt=en-US">Governor F, Gov Fortunado Halili Rd, SJDM, 3023</a></span>
+          </li>
+          <li>
+            <span class="contact-info__label">Phone</span>
+            <a class="contact-info__value" href="tel:+639123456789">+63 927 572 5348</a>
+          </li>
+          <li>
+            <span class="contact-info__label">Email</span>
+            <a class="contact-info__value" href="mailto:hello@byte2bite.example">
+samgyup199@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-info__label">Hours</span>
+            <span class="contact-info__value">Mon–Fri · 12:00 PM – 10:00 PM</span>
+            <br>
+            <span class="contact-info__value">Sat-Sun · 11:00 PM – 10:00 PM</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Message form -->
+      <form class="contact-form" action="#" method="post">
+        <div class="field">
+          <label for="full-name">Full Name</label>
+          <input type="text" name="full-name" id="full-name" placeholder="Enter Full Name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+        </div>
+        <div class="field field--full">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject" placeholder="Reservation, catering, feedback...">
+        </div>
+        <div class="field field--full">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5" placeholder="How can we help?" required></textarea>
+        </div>
+
+        <button class="btn btn--primary contact-form__submit" type="submit">Send message</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="../main.js"></script>
+</body>
+</html>

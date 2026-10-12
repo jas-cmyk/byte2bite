@@ -1,0 +1,71 @@
+/* Offers page — poster images keep their original aspect ratio (no cropping) */
+
+.offers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-3px);
+  border-color: #3a4150;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.offer-card__media {
+  background: var(--surface-2);
+}
+
+/* Scale to the card width, height follows the image's own proportions */
+.offer-card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.offer-card__body {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 14px;
+}
+
+.offer-card__name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.offer-card__price {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Single column on small portrait screens */
+@media (max-width: 520px) {
+  .offers__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-card {
+    transition: none;
+  }
+}
