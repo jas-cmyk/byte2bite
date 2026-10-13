@@ -1,0 +1,31 @@
+### health check
+GET http://localhost:3000/health
+
+### create a reservation (returns reservation, viewUrl and qr data url)
+POST http://localhost:3000/api/reservations
+Content-Type: application/json
+
+{
+  "name": "Rey Mart",
+  "phone": "+639275725348",
+  "email": "samgyup199@gmail.com",
+  "datetime": "2026-10-14T19:00",
+  "guests": 4,
+  "tableId": "t2",
+  "special": "Window seat if possible"
+}
+
+### list reservations
+GET http://localhost:3000/api/reservations
+
+### get one reservation (replace REPLACE_ID with a real id)
+GET http://localhost:3000/api/reservations/REPLACE_ID
+
+### download the QR as PNG (replace REPLACE_ID)
+GET http://localhost:3000/api/reservations/REPLACE_ID/qr.png
+
+### open the public view page (replace REPLACE_ID)
+GET http://localhost:3000/r/REPLACE_ID
+
+### delete a reservation (replace REPLACE_ID)
+DELETE http://localhost:3000/api/reservations/REPLACE_ID

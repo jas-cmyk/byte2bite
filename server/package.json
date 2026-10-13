@@ -1,0 +1,16 @@
+{
+  "name": "byte2bite-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Express backend for Byte2Bite reservations with QR view links",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "qrcode": "^1.5.4"
+  }
+}

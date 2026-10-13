@@ -39,14 +39,14 @@
 
     <main class="page">
     <h1 class="page__title">SELECT TABLE</h1>
-    <form action="input" class="reservation-form">
+    <form action="#" data-api="http://localhost:3000" class="reservation-form">
         <div class="field">
           <label for="full-name">Full Name</label>
-          <input type="text" name="full-name" id="full-name" placeholder="Enter Full Name">
+          <input type="text" name="full-name" id="full-name" placeholder="Enter Full Name" required>
         </div>
         <div class="field">
           <label for="phonenumber">Phonenumber</label>
-          <input type="number" name="phonenumber" id="phonenumber" placeholder="+63xxxxxxxxxx">
+          <input type="number" name="phonenumber" id="phonenumber" placeholder="+63xxxxxxxxxx" required>
         </div>
         <div class="field">
           <label for="email">Email</label>
@@ -54,11 +54,11 @@
         </div>
         <div class="field">
           <label for="date">Date &amp; Time</label>
-          <input type="datetime-local" name="date" id="reservation-date">
+          <input type="datetime-local" name="date" id="reservation-date" required>
         </div>
         <div class="field">
           <label for="guests">Guests</label>
-          <input type="number" name="guests" id="guests" max="10" min="1" value="1">
+          <input type="number" name="guests" id="guests" max="10" min="1" value="1" required>
         </div>
         <div class="field field--full">
           <label for="special-request">Special Requests</label>
@@ -122,7 +122,20 @@
         </fieldset>
         <input type="submit" value="CONFIRM RESERVATION">
     </form>
+
+    <section class="confirm" id="confirm" hidden>
+      <div class="qrcard">
+        <h2 class="qrcard__title">RESERVATION</h2>
+        <div class="qrcard__qr" id="confirm-qr"></div>
+        <p class="qrcard__hint" id="confirm-hint"></p>
+        <div class="qrcard__actions">
+          <a class="qrcard__link" id="confirm-link" href="#">Open view page</a>
+        </div>
+        <button class="qrcard__again" id="again" type="button">Make another reservation</button>
+      </div>
+    </section>
   </main>
   <script src="../main.js"></script>
+  <script src="reservation.js"></script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-2: #1f232c;
+  --border: #2a2f3a;
+  --text: #eef1f6;
+  --text-muted: #9aa4b2;
+  --accent: #ff0000;
+  --radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.view {
+  width: 100%;
+  max-width: 460px;
+}
+
+.view__head {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.view__brand {
+  display: block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.view__accent {
+  color: var(--accent);
+}
+
+.view__title {
+  margin: 10px 0 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+}
+
+.card {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card__loading,
+.card__empty {
+  margin: 0;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.card__empty {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.row__value {
+  text-align: right;
+}
+
+.row__meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

@@ -249,3 +249,89 @@
 .page:has(.reservation-form) .page__title {
   text-align: center;
 }
+
+/* -------------------------------------------------- QR confirmation */
+
+.confirm {
+  width: 100%;
+  max-width: 460px;
+  margin: 28px auto 0;
+}
+
+.qrcard {
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.qrcard__title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.qrcard__qr {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.qrcard__qr img {
+  display: block;
+}
+
+.qrcard__hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.qrcard__hint.is-error {
+  color: #ff7a68;
+  font-weight: 600;
+}
+
+.qrcard__actions {
+  display: none;
+}
+
+.qrcard__actions a {
+  color: var(--text);
+}
+
+.qrcard__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text) !important;
+}
+
+.qrcard__again {
+  height: 46px;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.qrcard__again:hover {
+  border-color: #3a4150;
+}
+
+.page:has(.qrcard) .page__title {
+  text-align: center;
+}
