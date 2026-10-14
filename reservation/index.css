@@ -42,6 +42,9 @@
 }
 
 .table-select legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 0;
   margin-bottom: 12px;
   font-size: 0.8rem;
@@ -96,6 +99,9 @@
 }
 
 .table-card__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.78rem;
   color: var(--text-muted);
 }
@@ -143,6 +149,9 @@
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 10px 12px;
   font-size: 0.8rem;
   font-weight: 600;
@@ -166,7 +175,109 @@
   }
 }
 
+/* -------------------------------------------------- Offer selection */
+
+.offer-select {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 20px 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.offer-select legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.offer-select__hint {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.offer-choice {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Visually hide the radio but keep it accessible/keyboard-focusable. */
+.offer-choice input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.offer-choice__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  padding: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.offer-choice__body:hover {
+  border-color: #3a4150;
+}
+
+.offer-choice input:checked + .offer-choice__body {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.offer-choice input:focus-visible + .offer-choice__body {
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.4);
+}
+
+.offer-choice__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.offer-choice__name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.offer-choice__price {
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
 .field label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -200,31 +311,37 @@
 }
 
 /* Submit button spans the full width of the grid */
-.reservation-form input[type="submit"] {
+.reservation-form__submit {
   grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin-top: 8px;
   height: 50px;
   padding: 0;
   color: #fff;
+  font: inherit;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   background: var(--accent);
-  border-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.15s ease, transform 0.05s ease;
 }
 
-.reservation-form input[type="submit"]:hover {
+.reservation-form__submit:hover {
   background: var(--accent-hover);
 }
 
-.reservation-form input[type="submit"]:active {
+.reservation-form__submit:active {
   transform: translateY(1px);
 }
 
-.reservation-form input[type="submit"]:focus-visible {
+.reservation-form__submit:focus-visible {
   box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.4);
 }
 
@@ -308,12 +425,19 @@
 }
 
 .qrcard__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text) !important;
 }
 
 .qrcard__again {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   height: 46px;
   color: var(--text);
   font: inherit;

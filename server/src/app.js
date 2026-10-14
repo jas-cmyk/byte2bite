@@ -5,7 +5,11 @@ import { fileURLToPath } from "node:url";
 import { CORS_ORIGIN } from "./config.js";
 import { reservationsRouter } from "./routes/index.js";
 
-const publicDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "public");
+const here = path.dirname(fileURLToPath(import.meta.url));
+const publicDir = path.join(here, "public");
+// The site's assets (e.g. offer posters) live at the repo root; the view page
+// references them by their seed paths ("assets/..."), so expose them here too.
+const assetsDir = path.join(here, "..", "..", "assets");
 
 export function createApp() {
   const app = express();
@@ -13,6 +17,7 @@ export function createApp() {
   app.use(cors({ origin: CORS_ORIGIN }));
   app.use(express.json());
   app.use(reservationsRouter);
+  app.use("/assets", express.static(assetsDir));
   app.use(express.static(publicDir));
 
   app.use((err, req, res, next) => {

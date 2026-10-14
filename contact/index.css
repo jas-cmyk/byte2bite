@@ -27,6 +27,34 @@
   list-style: none;
 }
 
+.contact-info__list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* Leading icon badge for each contact detail */
+.contact-info__icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.contact-info__icon .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-info__body {
+  min-width: 0;
+}
+
 .contact-info__label {
   display: block;
   margin-bottom: 4px;
@@ -68,6 +96,9 @@ a.contact-info__value:hover {
 }
 
 .contact-form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;

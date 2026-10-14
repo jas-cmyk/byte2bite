@@ -1,6 +1,7 @@
 import { list, find, insert, remove } from "./store.js";
 import { toDataUrl } from "./qr.js";
 import { newId } from "../utils/id.js";
+import { findOffer } from "../data/offers.js";
 import { BASE_URL } from "../config.js";
 
 const TABLES = {
@@ -22,8 +23,24 @@ export function normalize(body) {
     throw error;
   }
 
-  const tableId = String(body.tableId || "t1").toLowerCase();
+  // Table ids arrive as "t1".."t4"; tolerate the DOM id form ("table-t1") too.
+  const tableId = String(body.tableId || "t1").trim().toLowerCase().replace(/^table-/, "");
   const table = TABLES[tableId] || TABLES.t1;
+
+  // Offer selection is required. The catalogue is the source of truth, so
+  // clients cannot invent names or prices.
+  const offerId = String(body.offerId || "").trim();
+  if (!offerId) {
+    const error = new Error("offerId is required");
+    error.status = 400;
+    throw error;
+  }
+  const offer = findOffer(offerId);
+  if (!offer) {
+    const error = new Error(`Unknown offer: ${offerId}`);
+    error.status = 400;
+    throw error;
+  }
 
   return {
     name,
@@ -34,6 +51,10 @@ export function normalize(body) {
     tableId,
     tableName: table.name,
     seats: table.seats,
+    offerId: offer.id,
+    offerName: offer.name,
+    offerImg: offer.img,
+    offerPrice: offer.price,
     special: String(body.special || "").trim(),
   };
 }

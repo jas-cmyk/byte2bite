@@ -1,3 +1,57 @@
+/* Offer picker, rendered from the shared seed data (lib/seed.js).
+   Selecting an offer is required; the first offer is checked by default. */
+(function () {
+  var picker = document.querySelector("[data-offer-picker]");
+  if (!picker) return;
+
+  var seed = window.BYTE2BITE_SEED;
+  var offers = seed && seed.offers_seed;
+  if (!offers || !offers.length) return;
+
+  var currency = seed.currency || "";
+
+  function build(offer, checked) {
+    var label = document.createElement("label");
+    label.className = "offer-choice";
+
+    var input = document.createElement("input");
+    input.type = "radio";
+    input.name = "offer";
+    input.value = offer.id;
+    if (checked) input.checked = true;
+    label.appendChild(input);
+
+    var body = document.createElement("span");
+    body.className = "offer-choice__body";
+
+    if (offer.img) {
+      var img = document.createElement("img");
+      img.className = "offer-choice__img";
+      img.src = "../" + offer.img;
+      img.alt = offer.name || "";
+      img.loading = "lazy";
+      body.appendChild(img);
+    }
+
+    var name = document.createElement("span");
+    name.className = "offer-choice__name";
+    name.textContent = offer.name;
+    body.appendChild(name);
+
+    var price = document.createElement("span");
+    price.className = "offer-choice__price";
+    price.textContent = typeof offer.price === "number" ? currency + offer.price.toFixed(2) : "—";
+    body.appendChild(price);
+
+    label.appendChild(body);
+    return label;
+  }
+
+  offers.forEach(function (offer, index) {
+    picker.appendChild(build(offer, index === 0));
+  });
+})();
+
 (function () {
   var form = document.querySelector(".reservation-form");
   var confirm = document.getElementById("confirm");
@@ -7,6 +61,7 @@
   var hint = document.getElementById("confirm-hint");
   var link = document.getElementById("confirm-link");
   var again = document.getElementById("again");
+  var againLabel = document.getElementById("again-label");
   var apiUrl = (form.dataset.api || "http://localhost:3000").replace(/\/+$/, "");
 
   function setState(text, isError) {
@@ -14,7 +69,7 @@
     hint.textContent = text;
     hint.classList.toggle("is-error", !!isError);
     link.style.display = "none";
-    again.textContent = "Try again";
+    if (againLabel) againLabel.textContent = "Try again";
   }
 
   function render(data) {
@@ -29,7 +84,7 @@
     }
     link.href = data.viewUrl;
     link.style.display = "inline-block";
-    again.textContent = "Make another reservation";
+    if (againLabel) againLabel.textContent = "Make another reservation";
   }
 
   form.addEventListener("submit", async function (event) {
@@ -41,7 +96,8 @@
       email: document.getElementById("email").value.trim(),
       datetime: document.getElementById("reservation-date").value,
       guests: Number(document.getElementById("guests").value),
-      tableId: (document.querySelector('input[name="table"]:checked') || {}).id || "t1",
+      tableId: (document.querySelector('input[name="table"]:checked') || {}).value || "t1",
+      offerId: (document.querySelector('input[name="offer"]:checked') || {}).value || "",
       special: document.getElementById("special-request").value.trim(),
     };
 

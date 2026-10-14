@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Byte2Bite</title>
+  <link rel="icon" type="image/png" href="../assets/samgyuplogo.png">
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <!-- Brand -->
+      <a class="brand" href="../" aria-label="byte2bite home">
+        <span class="brand__name">BYTE<span class="brand__accent">2</span>BITE</span>
+      </a>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn btn--ghost" type="button">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.5" r="3.75" /><path d="M4.5 21a7.5 7.5 0 0 1 15 0" /></svg>
+          Sign in
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation: left sidebar on desktop, dropdown on mobile -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="../">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5" /><path d="M9.5 21v-6h5v6" /></svg>
+        HOME
+      </a>
+      <a class="nav__link" href="../reservation/">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2" /><path d="M3 9.5h18" /><path d="M8 3v3" /><path d="M16 3v3" /></svg>
+        RESERVATION
+      </a>
+      <a class="nav__link" href="../contact/">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2" /><path d="m3 6.5 9 6 9-6" /></svg>
+        CONTACT
+      </a>
+      <a class="nav__link nav__link--active" href="#">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M12 11v5.5" /><path d="M12 7.5h.01" /></svg>
+        ABOUT US
+      </a>
+    </nav>
+    <img src="../assets/samgyuplogo.png" alt="byte2bite logo" width="148" height="148">
+  </aside>
+
+  <main class="page">
+    <h1 class="page__title">ABOUT US</h1>
+    <p class="page__subtitle">The story behind the bytes and the bites.</p>
+
+    <!-- Story -->
+    <section class="about">
+      <div class="about-lead">
+        <div class="about-lead__media">
+          <img src="../assets/carousell2/caro1.jpg" alt="A house special dish served at Byte2Bite">
+        </div>
+        <div class="about-lead__text">
+          <h2 class="section__title">From a small kitchen to your table</h2>
+          <p>
+            Byte2Bite began as a tiny online-only kitchen with one goal: make great
+            Korean comfort food easy to order and fast to reach. What started with a
+            handful of recipes shared between friends is now a neighbourhood favourite.
+          </p>
+          <p>
+            We cook in small batches, plate every order by hand, and keep the menu
+            honest — no shortcuts, just food we would happily eat ourselves.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="about-values" aria-labelledby="values-title">
+      <h2 class="section__title section__title--icon" id="values-title">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" /><path d="M2 21c0-3 1.85-5.36 5.08-6" /></svg>
+        What we stand for
+      </h2>
+      <div class="values__grid">
+        <article class="value-card">
+          <span class="value-card__icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" /><path d="M2 21c0-3 1.85-5.36 5.08-6" /></svg>
+          </span>
+          <h3 class="value-card__title">Fresh ingredients</h3>
+          <p class="value-card__text">Produce is sourced locally and prepped the same day it is served.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-card__icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s7-6.2 7-11.5a7 7 0 1 0-14 0c0 5.3 7 11.5 7 11.5Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+          </span>
+          <h3 class="value-card__title">Local kitchens</h3>
+          <p class="value-card__text">We partner with kitchens in your area so your food travels less.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-card__icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1" /><path d="M16 8h4l3 3v5h-7V8Z" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></svg>
+          </span>
+          <h3 class="value-card__title">Fast delivery</h3>
+          <p class="value-card__text">Most orders arrive within 30 minutes, hot and ready to eat.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-card__icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l8.84 8.84 8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" /></svg>
+          </span>
+          <h3 class="value-card__title">Made with care</h3>
+          <p class="value-card__text">Every plate is checked by hand before it leaves the kitchen.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="about-stats" aria-label="Byte2Bite in numbers">
+      <div class="stat">
+        <div class="stat__value">5+</div>
+        <div class="stat__label">Years serving</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">40+</div>
+        <div class="stat__label">Dishes &amp; drinks</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">12k+</div>
+        <div class="stat__label">Orders delivered</div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">4.9</div>
+        <div class="stat__label">Average rating</div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="about-team" aria-labelledby="team-title">
+      <h2 class="section__title section__title--icon" id="team-title">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+        Meet the team
+      </h2>
+      <div class="team__grid">
+        <article class="team-card">
+          <span class="team-card__avatar">RM</span>
+          <h3 class="team-card__name">Rey M.</h3>
+          <p class="team-card__role">Founder &amp; Head Chef</p>
+        </article>
+        <article class="team-card">
+          <span class="team-card__avatar">AS</span>
+          <h3 class="team-card__name">Ana S.</h3>
+          <p class="team-card__role">Kitchen Lead</p>
+        </article>
+        <article class="team-card">
+          <span class="team-card__avatar">MT</span>
+          <h3 class="team-card__name">Miguel T.</h3>
+          <p class="team-card__role">Delivery Lead</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <h2>Hungry yet?</h2>
+      <p>Pick a table and we will take care of the rest.</p>
+      <a class="btn btn--primary" href="../reservation/">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2" /><path d="M3 9.5h18" /><path d="M8 3v3" /><path d="M16 3v3" /></svg>
+        Reserve a table
+      </a>
+    </section>
+  </main>
+
+  <script src="../main.js"></script>
+</body>
+</html>

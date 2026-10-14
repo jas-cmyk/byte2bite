@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation - Byte2Bite</title>
+    <link rel="icon" type="image/png" href="../assets/samgyuplogo.png">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -17,7 +18,10 @@
 
       <!-- Actions -->
       <div class="actions">
-        <button class="btn btn--ghost" type="button">Sign in</button>
+        <button class="btn btn--ghost" type="button">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.5" r="3.75" /><path d="M4.5 21a7.5 7.5 0 0 1 15 0" /></svg>
+          Sign in
+        </button>
         <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -28,11 +32,22 @@
   <!-- Navigation: left sidebar on desktop, dropdown on mobile -->
   <aside class="sidebar" id="sidebar">
     <nav class="nav" aria-label="Primary">
-      <a class="nav__link" href="../">HOME</a>
-      <a class="nav__link nav__link--active" href="#">RESERVATION</a>
-      <a class="nav__link" href="../offers/">OFFERS</a>
-      <a class="nav__link" href="../contact/">CONTACT</a>
-      <a class="nav__link" href="#">ABOUT US</a>
+      <a class="nav__link" href="../">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5" /><path d="M9.5 21v-6h5v6" /></svg>
+        HOME
+      </a>
+      <a class="nav__link nav__link--active" href="#">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2" /><path d="M3 9.5h18" /><path d="M8 3v3" /><path d="M16 3v3" /></svg>
+        RESERVATION
+      </a>
+      <a class="nav__link" href="../contact/">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2" /><path d="m3 6.5 9 6 9-6" /></svg>
+        CONTACT
+      </a>
+      <a class="nav__link" href="../about/">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5" /><path d="M12 11v5.5" /><path d="M12 7.5h.01" /></svg>
+        ABOUT US
+      </a>
     </nav>
     <img src="../assets/samgyuplogo.png" alt="byte2bite logo" width="148" height="148">
   </aside>
@@ -41,60 +56,93 @@
     <h1 class="page__title">SELECT TABLE</h1>
     <form action="#" data-api="http://localhost:3000" class="reservation-form">
         <div class="field">
-          <label for="full-name">Full Name</label>
+          <label for="full-name">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.5" r="3.75" /><path d="M4.5 21a7.5 7.5 0 0 1 15 0" /></svg>
+            Full Name
+          </label>
           <input type="text" name="full-name" id="full-name" placeholder="Enter Full Name" required>
         </div>
         <div class="field">
-          <label for="phonenumber">Phonenumber</label>
+          <label for="phonenumber">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg>
+            Phonenumber
+          </label>
           <input type="number" name="phonenumber" id="phonenumber" placeholder="+63xxxxxxxxxx" required>
         </div>
         <div class="field">
-          <label for="email">Email</label>
+          <label for="email">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2" /><path d="m3 6.5 9 6 9-6" /></svg>
+            Email
+          </label>
           <input type="text" name="email" id="email" placeholder="example@gmail.com">
         </div>
         <div class="field">
-          <label for="date">Date &amp; Time</label>
+          <label for="date">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2" /><path d="M3 9.5h18" /><path d="M8 3v3" /><path d="M16 3v3" /></svg>
+            Date &amp; Time
+          </label>
           <input type="datetime-local" name="date" id="reservation-date" required>
         </div>
         <div class="field">
-          <label for="guests">Guests</label>
+          <label for="guests">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+            Guests
+          </label>
           <input type="number" name="guests" id="guests" max="10" min="1" value="1" required>
         </div>
         <div class="field field--full">
-          <label for="special-request">Special Requests</label>
+          <label for="special-request">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z" /></svg>
+            Special Requests
+          </label>
           <input type="text" name="special-request" id="special-request" placeholder="Allergies, seating, celebrations...">
         </div>
 
         <fieldset class="table-select field--full">
-          <legend>Select a Table</legend>
+          <legend>
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /><path d="M9 3v18" /></svg>
+            Select a Table
+          </legend>
           <div class="table-picker">
             <div class="table-grid">
               <label class="table-card">
                 <input type="radio" name="table" id="table-t1" value="T1" checked>
                 <span class="table-card__body">
                   <span class="table-card__name">Table 1</span>
-                  <span class="table-card__meta">2 seats</span>
+                  <span class="table-card__meta">
+                    <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                    2 seats
+                  </span>
                 </span>
               </label>
               <label class="table-card">
                 <input type="radio" name="table" id="table-t2" value="T2">
                 <span class="table-card__body">
                   <span class="table-card__name">Table 2</span>
-                  <span class="table-card__meta">4 seats</span>
+                  <span class="table-card__meta">
+                    <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                    4 seats
+                  </span>
                 </span>
               </label>
               <label class="table-card">
                 <input type="radio" name="table" id="table-t3" value="T3">
                 <span class="table-card__body">
                   <span class="table-card__name">Table 3</span>
-                  <span class="table-card__meta">4 seats</span>
+                  <span class="table-card__meta">
+                    <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                    4 seats
+                  </span>
                 </span>
               </label>
               <label class="table-card">
                 <input type="radio" name="table" id="table-t4" value="T4">
                 <span class="table-card__body">
                   <span class="table-card__name">Table 4</span>
-                  <span class="table-card__meta">6 seats</span>
+                  <span class="table-card__meta">
+                    <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                    6 seats
+                  </span>
                 </span>
               </label>
             </div>
@@ -103,24 +151,48 @@
             <div class="table-preview">
               <div class="table-preview__item" data-for="t1">
                 <img src="../assets/t1.jpg" alt="Layout of table T1">
-                <span class="table-preview__caption">T1 - 2 seats</span>
+                <span class="table-preview__caption">
+                  <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                  T1 - 2 seats
+                </span>
               </div>
               <div class="table-preview__item" data-for="t2">
                 <img src="../assets/t2.jpg" alt="Layout of table T2">
-                <span class="table-preview__caption">T2 - 4 seats</span>
+                <span class="table-preview__caption">
+                  <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                  T2 - 4 seats
+                </span>
               </div>
               <div class="table-preview__item" data-for="t3">
                 <img src="../assets/t3.jpg" alt="Layout of table T3">
-                <span class="table-preview__caption">T3 - 4 seats</span>
+                <span class="table-preview__caption">
+                  <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                  T3 - 4 seats
+                </span>
               </div>
               <div class="table-preview__item" data-for="t4">
                 <img src="../assets/t4.jpg" alt="Layout of table T4">
-                <span class="table-preview__caption">T4 - 6 seats</span>
+                <span class="table-preview__caption">
+                  <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7.5" r="3.2" /><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0" /><path d="M16.5 5.2a3.2 3.2 0 0 1 0 6" /><path d="M18 20.5a6 6 0 0 0-2.2-4.6" /></svg>
+                  T4 - 6 seats
+                </span>
               </div>
             </div>
           </div>
         </fieldset>
-        <input type="submit" value="CONFIRM RESERVATION">
+        <fieldset class="offer-select field--full">
+          <legend>
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z" /><circle cx="7" cy="7" r="1.25" /></svg>
+            Choose an Offer
+          </legend>
+          <p class="offer-select__hint">Pick a deal to bundle with your table.</p>
+          <!-- Offer choices are rendered from lib/seed.js by reservation.js -->
+          <div class="offer-grid" data-offer-picker></div>
+        </fieldset>
+        <button class="reservation-form__submit" type="submit">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7" /></svg>
+          CONFIRM RESERVATION
+        </button>
     </form>
 
     <section class="confirm" id="confirm" hidden>
@@ -129,12 +201,19 @@
         <div class="qrcard__qr" id="confirm-qr"></div>
         <p class="qrcard__hint" id="confirm-hint"></p>
         <div class="qrcard__actions">
-          <a class="qrcard__link" id="confirm-link" href="#">Open view page</a>
+          <a class="qrcard__link" id="confirm-link" href="#">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6" /><path d="M20 4 10.5 13.5" /><path d="M19 14v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" /></svg>
+            Open view page
+          </a>
         </div>
-        <button class="qrcard__again" id="again" type="button">Make another reservation</button>
+        <button class="qrcard__again" id="again" type="button">
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" /><path d="M1 4v6h6" /></svg>
+          <span id="again-label">Make another reservation</span>
+        </button>
       </div>
     </section>
   </main>
+  <script src="../lib/seed.js"></script>
   <script src="../main.js"></script>
   <script src="reservation.js"></script>
 </body>

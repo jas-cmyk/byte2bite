@@ -3,7 +3,7 @@ set -euo pipefail
 API="${API:-http://localhost:3000}"
 
 usage() {
-  echo "usage: $0 {create|list|get|qr|delete} [id]"
+  echo "usage: $0 {create|list|offers|get|qr|delete} [id]"
 }
 
 create() {
@@ -14,6 +14,10 @@ create() {
 
 list() {
   curl -sS "$API/api/reservations"
+}
+
+offers() {
+  curl -sS "$API/api/offers"
 }
 
 get() {
@@ -32,6 +36,7 @@ delete() {
 case "${1:-}" in
   create) create ;;
   list) list ;;
+  offers) offers ;;
   get) get "${2:?id required}" ;;
   qr) qr "${2:?id required}" ;;
   delete) delete "${2:?id required}" ;;

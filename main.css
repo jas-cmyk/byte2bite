@@ -5,7 +5,7 @@
   --border: #2a2f3a;
   --text: #eef1f6;
   --text-muted: #9aa4b2;
-  --accent: #ff0000;
+  --accent: #f73b3b;
   --accent-hover: #441300;
   --radius: 5px;
   --topbar-h: 64px;
@@ -76,6 +76,23 @@ body {
   color: var(--accent);
 }
 
+/* ---------------------------------------------------------------- Icons */
+
+/* Shared sizing for the inline SVG icons used across the site. They inherit
+   color via `stroke="currentColor"` and scale with the surrounding text. */
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: -0.18em;
+}
+
+.icon--sm {
+  width: 1em;
+  height: 1em;
+}
+
 /* ---------------------------------------------------------------- Sidebar / Nav */
 
 .sidebar {
@@ -116,7 +133,9 @@ body {
 }
 
 .nav__link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 14px;
   border-radius: 0;
   color: var(--text-muted);
@@ -500,6 +519,17 @@ body {
   letter-spacing: -0.02em;
 }
 
+/* Section heading with a leading icon */
+.section__title--icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section__title--icon .icon {
+  color: var(--accent);
+}
+
 .drinks__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -577,6 +607,83 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .drink-card,
   .drink-card__media img {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------- Offers */
+/* Moved here from the former offers page; posters keep their original
+   aspect ratio (no cropping). */
+
+.offers {
+  margin-top: 56px;
+}
+
+.offers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-3px);
+  border-color: #3a4150;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.offer-card__media {
+  background: var(--surface-2);
+}
+
+/* Scale to the card width, height follows the image's own proportions */
+.offer-card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.offer-card__body {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 14px;
+}
+
+.offer-card__name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.offer-card__price {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Single column on small portrait screens */
+@media (max-width: 520px) {
+  .offers__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-card {
     transition: none;
   }
 }

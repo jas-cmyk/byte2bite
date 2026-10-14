@@ -5,7 +5,7 @@
   --border: #2a2f3a;
   --text: #eef1f6;
   --text-muted: #9aa4b2;
-  --accent: #ff0000;
+  --accent: #ff2e2e;
   --radius: 5px;
 }
 
@@ -84,6 +84,9 @@ body {
 }
 
 .row__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -91,8 +94,42 @@ body {
   color: var(--text-muted);
 }
 
+.row__label .icon {
+  color: var(--accent);
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  display: inline-block;
+}
+
 .row__value {
   text-align: right;
+}
+
+.row__value--offer {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.row__thumb {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background: var(--surface-2);
+}
+
+.row__offer-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .row__meta {

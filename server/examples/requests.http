@@ -1,6 +1,9 @@
 ### health check
 GET http://localhost:3000/health
 
+### list the offers a reservation can be bundled with (id, name, price)
+GET http://localhost:3000/api/offers
+
 ### create a reservation (returns reservation, viewUrl and qr data url)
 POST http://localhost:3000/api/reservations
 Content-Type: application/json
@@ -12,6 +15,7 @@ Content-Type: application/json
   "datetime": "2026-10-14T19:00",
   "guests": 4,
   "tableId": "t2",
+  "offerId": "offer-1",
   "special": "Window seat if possible"
 }
 

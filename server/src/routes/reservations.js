@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { create, list, find, remove } from "../services/reservations.js";
+import { listOffers } from "../data/offers.js";
 import { toPng } from "../services/qr.js";
 import { BASE_URL } from "../config.js";
 
@@ -7,6 +8,11 @@ export const router = Router();
 
 router.get("/health", (req, res) => {
   res.json({ status: "ok", time: new Date().toISOString() });
+});
+
+// The offers a reservation can be bundled with.
+router.get("/api/offers", (req, res) => {
+  res.json({ offers: listOffers() });
 });
 
 router.get("/api/reservations", async (req, res, next) => {

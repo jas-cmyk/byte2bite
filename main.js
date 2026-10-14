@@ -1,3 +1,23 @@
+/* Inline SVG icons for JS-rendered markup, kept in sync with the static
+   icons in the HTML (sized by `.icon` in main.css). */
+var BYTE2BITE_ICONS = {
+  bag: '<path d="M5.5 7.5h13l-1 13.5h-11Z"/><path d="M9 7.5V6a3 3 0 0 1 6 0v1.5"/>'
+};
+
+function byte2biteIcon(name, extraClass) {
+  var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "icon" + (extraClass ? " " + extraClass : ""));
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "2");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
+  svg.setAttribute("aria-hidden", "true");
+  svg.innerHTML = BYTE2BITE_ICONS[name] || "";
+  return svg;
+}
+
 /* Navigation toggle.
    Desktop: the sidebar is always visible (CSS handles that).
    Mobile: the hamburger opens the sidebar as an off-canvas dropdown. */
@@ -96,7 +116,8 @@
         var link = document.createElement("a");
         link.className = "btn btn--primary";
         link.href = item.cta.href || "#";
-        link.textContent = item.cta.label;
+        link.appendChild(byte2biteIcon("bag"));
+        link.appendChild(document.createTextNode(item.cta.label));
         caption.appendChild(link);
       }
 

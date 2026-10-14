@@ -5,5 +5,6 @@
   "datetime": "2026-10-14T19:00",
   "guests": 4,
   "tableId": "t2",
+  "offerId": "offer-1",
   "special": "Window seat if possible"
 }
