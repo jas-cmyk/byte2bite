@@ -37,7 +37,7 @@ flowchart LR
   STAFF -->|list and cancel requests, content edits| SYS
   SYS -->|reservation list, status, menu and offers| STAFF
 
-  PHONE -->|scan opens /r/{id}| SYS
+  PHONE -->|"scan opens /r/{id}"| SYS
   SYS -->|reservation view page| PHONE
 
   SYS -.->|order and amount| PAY
@@ -87,7 +87,7 @@ flowchart TB
   P2 --> P3
   P3 -->|view url and QR| CUST
 
-  PHONE -->|scan /r/{id}| P4
+  PHONE -->|"scan /r/{id}"| P4
   P4 --> D1
   P4 --> PHONE
 
